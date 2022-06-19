@@ -437,7 +437,7 @@ section {
 section.articles,
 section.services,
 section.technologies {
-    padding: 160px 120px;
+    padding: 80px 120px;
 }
 
 .services .services-cards {
@@ -639,7 +639,7 @@ section.technologies {
 }
 
 .subscribe {
-    padding: 0 120px 160px;
+    padding: 0 120px 80px;
 }
 
 .subscribe .subscribe-container {
