@@ -685,6 +685,10 @@ section.projects {
     padding: 0 120px 180px;
 }
 
+section.projects div.load-more-projects {
+    display: none;
+}
+
 .projects .project-row {
     margin-top: 180px;
     justify-content: space-between;
