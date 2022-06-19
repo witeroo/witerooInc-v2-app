@@ -448,9 +448,9 @@ section.technologies {
     box-sizing: border-box;
     flex-direction: column;
     justify-content: space-between;
-    padding: 48px;
-    width: 384px;
-    height: 384px;
+    padding: 32px;
+    width: 392px;
+    height: 416px;
     background: #FFF;
     border: 1px solid #DDDEDF;
 }
@@ -1483,7 +1483,7 @@ footer p.copy {
     }
     .services .services-cards .services-card-item {
         margin-bottom: 24px;
-        padding: 69px 48px;
+        padding: 46px 32px;
         max-width: 100%;
         height: auto;
     }
