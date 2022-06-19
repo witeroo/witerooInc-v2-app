@@ -9,6 +9,25 @@ $hamburger.click(function(e) {
 });
 
 
+// delayed smooth scroll on landing page
+$('.main-nav li a').click(function() {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+        location.hostname == this.hostname) {
+        let $target = $(this.hash);
+        $target = $target.length && $target ||
+            $('[name=' + this.hash.slice(1) + ']');
+        if ($target.length) {
+            let targetOffset = $target.offset().top;
+            $('html')
+                .animate({
+                    scrollTop: targetOffset
+                }, 2000);
+            return false;
+        }
+    }
+});
+
+
 
 // hero slide animation
 if ($('.hero-slide .slide-item')) {
@@ -131,3 +150,12 @@ if ($('.navbar-drop-btn')) {
         $(this).next('.navbar').toggle();
     })
 }
+
+
+
+// load more projects
+$('#more-projects').click(function(e) {
+    e.preventDefault();
+    $('.load-more-projects').slideDown();
+    $(this).hide();
+})
