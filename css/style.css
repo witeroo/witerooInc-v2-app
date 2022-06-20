@@ -411,7 +411,7 @@ nav.main-nav .logo {
 }
 
 section {
-    padding: 120px;
+    padding: 60px 120px;
 }
 
 .section-header {
@@ -518,7 +518,7 @@ section.technologies {
 }
 
 .business .business-container {
-    padding: 120px;
+    padding: 60px 120px;
     background: linear-gradient(73.97deg, #0033EE 58.42%, rgba(0, 51, 238, 0) 75.27%);
 }
 
@@ -651,7 +651,7 @@ section.technologies {
     width: 100%;
     max-width: unset;
     background: linear-gradient(73.97deg, #0033EE 58.42%, rgba(0, 51, 238, 0) 75.27%);
-    padding: 120px;
+    padding: 60px 120px;
     text-align: left;
 }
 
@@ -1089,7 +1089,7 @@ section.legal p {
 /* footer */
 
 footer {
-    padding: 140px 120px 80px;
+    padding: 70px 120px 80px;
     background: #03164A;
 }
 
@@ -1469,7 +1469,7 @@ footer p.copy {
     section.articles,
     section.services,
     section.technologies {
-        padding: 120px 24px;
+        padding: 60px 24px;
     }
     .section-header {
         max-width: 100%;
@@ -1484,6 +1484,7 @@ footer p.copy {
     }
     .services .services-cards {
         flex-direction: column;
+        align-items: center;
     }
     .services .services-cards .services-card-item {
         margin-bottom: 24px;
@@ -1521,11 +1522,11 @@ footer p.copy {
     }
     .business .business-container,
     .our-work {
-        padding: 120px 24px;
+        padding: 60px 24px;
         flex-direction: column;
     }
     .business .business-img {
-        max-width: 100%;
+        width: 100%;
         height: auto;
     }
     .business .section-header {
@@ -1553,6 +1554,7 @@ footer p.copy {
         margin-bottom: 20px;
     }
     .our-work .our-work-img img {
+        width: 100%;
         height: auto;
     }
     .articles .articles-container {
@@ -1610,7 +1612,7 @@ footer p.copy {
     }
     .subscribe .section-header {
         background: unset;
-        padding: 88px 48px;
+        padding: 44px 48px;
     }
     .subscribe .section-header h2,
     .subscribe .section-header p {
@@ -1868,7 +1870,7 @@ footer p.copy {
      * footer
     */
     footer {
-        padding: 120px 24px 24px;
+        padding: 60px 24px 24px;
     }
     footer .footer-row {
         flex-wrap: wrap;
