@@ -154,8 +154,10 @@ if ($('.navbar-drop-btn')) {
 
 
 // load more projects
-$('#more-projects').click(function(e) {
-    e.preventDefault();
-    $('.load-more-projects').slideDown();
-    $(this).hide();
-})
+if ($('#more-projects')) {
+    $('#more-projects').click(function(e) {
+        e.preventDefault();
+        $('.load-more-projects').slideDown();
+        $(this).hide();
+    })
+}

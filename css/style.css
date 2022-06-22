@@ -50,12 +50,12 @@ dd {
 /* Set core body defaults */
 
 html {
-    /* scroll-behavior: smooth; */
+    width: 100%;
 }
 
 body {
+    width: 100%;
     min-height: 100vh;
-    /* scroll-behavior: smooth; */
     text-rendering: optimizeSpeed;
     line-height: 1.5;
 }
@@ -124,7 +124,7 @@ select {
     appearance: none;
     background: url('../img/icons/chevron-down.svg');
     background-repeat: no-repeat;
-    background-position: calc(100% - 20px) 14px;
+    background-position: calc(100% - 20px) 50%;
 }
 
 input[type="submit"] {
@@ -222,7 +222,6 @@ body {
 */
 
 nav.main-nav {
-    box-sizing: border-box;
     justify-content: space-between;
     align-items: center;
     padding: 24px 120px;
@@ -304,7 +303,7 @@ nav.main-nav .logo {
 .hero-slide .slide-item.active {
     height: auto;
     padding: 198.5px 120px;
-    background-size: 101%;
+    background-size: 115%;
     transition: background 1.25s 0s cubic-bezier(0.33333, 0.66667, 0.66667, 1);
 }
 
@@ -445,7 +444,6 @@ section.technologies {
 }
 
 .services .services-cards .services-card-item {
-    box-sizing: border-box;
     flex-direction: column;
     justify-content: space-between;
     padding: 32px;
@@ -682,7 +680,7 @@ section.technologies {
 */
 
 section.projects {
-    padding: 0 120px 180px;
+    padding: 0 0 90px;
 }
 
 section.projects div.load-more-projects {
@@ -690,18 +688,38 @@ section.projects div.load-more-projects {
 }
 
 .projects .project-row {
-    margin-top: 180px;
+    padding: 60px;
     justify-content: space-between;
     align-items: center;
 }
 
+.projects .project-row.left-text {
+    background: #03164A;
+}
+
 .project-row .project-image {
-    width: 588px;
+    width: 720px;
+    max-width: 50%;
 }
 
 .project-row .project-text {
-    width: 588px;
+    margin-left: 24px;
+    width: 720px;
+    max-width: 50%;
+    align-items: center;
+}
+
+.project-row.left-text .project-text {
+    margin-left: 0;
+    margin-right: 24px;
+}
+
+.project-text .project-text-container {
     padding: 67px 48px;
+}
+
+.project-row.left-text .project-text-container {
+    left: 109px;
 }
 
 .project-row .project-text h2 {
@@ -709,7 +727,21 @@ section.projects div.load-more-projects {
     font-weight: 900;
     font-size: 24px;
     line-height: 120%;
-    color: #01040A;
+}
+
+.project-row .project-text p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #808187;
+}
+
+.project-row.left-text .project-text h2 {
+    color: #FFF;
+}
+
+.project-row.left-text .project-text p {
+    color: #EFF2FD;
 }
 
 .projects .more-projects {
@@ -753,6 +785,7 @@ nav.blog-nav .navbar-drop-btn {
 }
 
 nav.blog-nav .search-box input {
+    margin-bottom: 0;
     width: 296.5px;
     border: 1px solid #FFF;
     padding: 10px 40px;
@@ -763,7 +796,7 @@ nav.blog-nav .search-box input {
     color: #FFF;
     background: url('../img/icons/search.svg') no-repeat;
     background-size: 20px;
-    background-position: 12px 10px;
+    background-position: 12px 50%;
 }
 
 nav.blog-nav .search-box input::placeholder {
@@ -771,11 +804,11 @@ nav.blog-nav .search-box input::placeholder {
 }
 
 section.blogs {
-    padding: 140px 120px;
+    padding: 70px 120px;
 }
 
 .blogs .featured-blog {
-    margin-bottom: 140px;
+    margin-bottom: 70px;
     justify-content: space-between;
     align-items: center;
 }
@@ -892,7 +925,7 @@ section.blogs {
 */
 
 section.blogs.single {
-    padding: 140px 0;
+    padding: 70px 0;
 }
 
 .blogs.single .single-blog {
@@ -942,7 +975,6 @@ section.blogs.single {
 .socials .social-icon {
     display: flex;
     margin-right: 16px;
-    box-sizing: border-box;
     width: 40px;
     height: 40px;
     padding: 12px;
@@ -1145,7 +1177,6 @@ footer .footer-about p {
 
 footer .socials .social-icon {
     margin-right: 16px;
-    box-sizing: border-box;
     width: 40px;
     height: 40px;
     padding: 12px;
@@ -1181,6 +1212,7 @@ footer p.copy {
     left: 0px;
     top: 0px;
     background: rgba(2, 13, 44, 0.9);
+    overflow: scroll;
 }
 
 .subscription-form-content {
@@ -1239,6 +1271,164 @@ footer p.copy {
 /*
  * responsive media queries
 */
+
+@media (max-width: 1439px) {
+    .d-md-flex {
+        display: flex;
+    }
+    /* header */
+    nav.main-nav {
+        padding: 24px 60px;
+    }
+    .main-nav .navbar-nav li:not(:last-child) a {
+        padding: 10px 8px;
+    }
+    .navbar-nav .contact-btn {
+        margin-left: 8px;
+    }
+    /*
+     * end header
+    */
+    /*
+    * hero
+    */
+    .hero-slide .slide-item.active {
+        padding: 99.25px 60px;
+    }
+    section.articles,
+    section.services,
+    section.technologies {
+        padding: 80px 60px;
+    }
+    .services .services-cards .services-card-item {
+        padding: 16px;
+        height: auto;
+    }
+    .business .business-container,
+    .our-work {
+        padding: 60px;
+    }
+    .business .business-img,
+    .our-work .our-work-img img {
+        height: auto;
+    }
+    .business .section-header,
+    .our-work .section-header {
+        max-width: 50%;
+        padding: 0 24px 0 0;
+    }
+    .our-work .section-header {
+        padding: 0 0 0 24px;
+    }
+    .articles .article-cards-row {
+        justify-content: space-evenly;
+    }
+    .subscribe {
+        padding: 0 60px 80px;
+    }
+    /* 
+     * end landing page
+    */
+    /* 
+     * blogs page
+    */
+    nav.blog-nav {
+        padding: 16px 24px;
+    }
+    nav.blog-nav .navbar-drop-btn {
+        margin-right: 0;
+        padding: 10px 12px;
+    }
+    nav.blog-nav .navbar-drop-btn a {
+        margin-right: 8px;
+    }
+    nav.blog-nav .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        border-top: 1px solid #EFF2FD;
+        background: #0A41DE;
+        padding: 24px 24px 0;
+    }
+    nav.blog-nav .navbar .nav-item {
+        margin-bottom: 24px;
+    }
+    nav.blog-nav {
+        padding: 16px 24px;
+    }
+    nav.blog-nav .navbar-drop-btn {
+        margin-right: 0;
+        padding: 10px 12px;
+    }
+    nav.blog-nav .navbar-drop-btn a {
+        margin-right: 8px;
+    }
+    nav.blog-nav .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        border-top: 1px solid #EFF2FD;
+        background: #0A41DE;
+        padding: 24px 24px 0;
+    }
+    nav.blog-nav .navbar .nav-item {
+        margin-bottom: 24px;
+    }
+    section.blogs {
+        padding: 70px 60px;
+    }
+    .blogs .featured-blog {
+        margin-bottom: 48px;
+        flex-direction: column;
+    }
+    .featured-blog .featured-blog-image {
+        width: 100%;
+    }
+    .featured-blog .featured-blog-text {
+        width: 100%;
+        padding: 24px 8px;
+    }
+    /* 
+     * end blogs page
+    */
+    /* 
+    * blog inner page
+    */
+    .blogs.single .single-blog {
+        max-width: 100%;
+        padding: 0 111px 70px;
+    }
+    /* 
+    * end blog inner page
+    */
+    /* 
+ * terms page
+*/
+    section.legal {
+        padding: 64px 162px 70px;
+    }
+    /* 
+     * end trms page
+    */
+    /*
+     * footer
+    */
+    footer {
+        padding: 70px 60px 80px;
+    }
+    footer .footer-col {
+        padding: 0 0 0 24px;
+    }
+    /*
+     * end footer
+    */
+}
 
 @media (max-width: 768px) {
     .d-sm-none {
@@ -1548,6 +1738,7 @@ footer p.copy {
         height: auto;
     }
     .our-work .section-header {
+        max-width: 100%;
         padding: 24px 8px;
     }
     .our-work .section-header p {
@@ -1635,18 +1826,22 @@ footer p.copy {
      * projects page
     */
     section.projects {
-        padding: 32px 24px 80px;
+        padding: 0 0 24px;
     }
     .projects .project-row {
-        margin-top: 48px;
-        flex-direction: column
+        flex-direction: column;
+        padding: 40px 24px;
     }
     .project-row .project-image {
         max-width: 100%;
     }
-    .project-row .project-text {
+    .project-row .project-text,
+    .project-row.left-text .project-text {
         order: 2;
         max-width: 100%;
+        margin: 0;
+    }
+    .project-text .project-text-container {
         padding: 24px 8px;
     }
     .projects .more-projects {
@@ -1663,47 +1858,12 @@ footer p.copy {
     /* 
      * blogs page
     */
-    nav.blog-nav {
-        padding: 16px 24px;
-    }
-    nav.blog-nav .navbar-drop-btn {
-        margin-right: 0;
-        padding: 10px 12px;
-    }
-    nav.blog-nav .navbar-drop-btn a {
-        margin-right: 8px;
-    }
-    nav.blog-nav .navbar {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        border-top: 1px solid #EFF2FD;
-        background: #0A41DE;
-        padding: 24px 24px 0;
-    }
-    nav.blog-nav .navbar .nav-item {
-        margin-bottom: 24px;
-    }
     nav.blog-nav .search-box input {
         width: 175px;
         padding: 10px 36px 10px 40px;
     }
     section.blogs {
         padding: 80px 24px;
-    }
-    .blogs .featured-blog {
-        margin-bottom: 48px;
-        flex-direction: column;
-    }
-    .featured-blog .featured-blog-image {
-        max-width: 100%;
-    }
-    .featured-blog .featured-blog-text {
-        width: 100%;
-        padding: 24px 8px;
     }
     .blogs .blog-excerpt {
         margin-bottom: 16px;
@@ -1801,7 +1961,6 @@ footer p.copy {
     .blogs.single .article-card-item .article-card-item-text {
         margin-bottom: unset;
     }
-    /* come here */
     .articles-indicators {
         padding: 24px;
         justify-content: center;
@@ -1864,7 +2023,7 @@ footer p.copy {
         font-size: 24px;
     }
     /* 
-     * end trms page
+     * end terms page
     */
     /*
      * footer
@@ -1904,7 +2063,6 @@ footer p.copy {
     .subscription-form-container {
         z-index: 99;
         padding: 0;
-        overflow: scroll;
     }
     .subscription-form-content {
         width: auto;
@@ -1939,7 +2097,4 @@ footer p.copy {
     /*
      * end subscription popup
      */
-    /* ============================= */
-    /* ============================= */
-    /* ============================= */
 }
