@@ -18,7 +18,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#business">Business</a></li>
-            <li class="active"><a href="projects.html">Projects</a></li>
+            <li><a href="projects.html">Projects</a></li>
             <li><a href="blogs.html">Blog</a></li>
             <li class="d-flex"><a href="contact.html" class="btn btn-primary contact-btn">Contact Us</a></li>
         </ul>
@@ -33,15 +33,38 @@
             <h1>Contact</h1>
         </div>
     </div>
-    <section class="contact">
-        <div class="contact-row d-flex">
+    <section class="contact p-relative">
+        <div class="mapouter">
+            <div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=180%20Northfield%20Dr.%20W.%20ON%20N2L%200C7,%20Waterloo,%20ON%20Canada.&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0"
+                    marginwidth="0"></iframe>
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 100%;
+                        width: 100%;
+                    }
+                </style>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none!important;
+                        height: 100%;
+                        width: 100%;
+                    }
+                </style>
+            </div>
+        </div>
+        <div class="contact-row d-flex p-absolute">
             <form action="" id="contact-form">
+                <h2>Send Us a Message</h2>
                 <input type="text" required name="name" placeholder="Your Name">
                 <input type="email" required name="email" placeholder="Enter your Email">
                 <textarea name="message" required placeholder="Enter Message"></textarea>
                 <input type="submit" value="Send Message">
             </form>
             <div class="contact-info">
+                <h2>Reach Out to Us</h2>
                 <div class="contact-info-row">
                     <h4>Phone Number</h4>
                     <a href="tel:+1(519)-991-1920" class="link">+1(519)-991-1920</a>
@@ -54,30 +77,12 @@
                     <h4>Address</h4>
                     <a href="" class="link">180 Northfield Dr. W. ON N2L 0C7, Waterloo, ON Canada.</a>
                 </div>
+                <div class="d-flex">
+                    <a href="" class="btn btn-secondary">View address on Map</a>
+                </div>
             </div>
         </div>
     </section>
-    <div class="mapouter">
-        <div class="gmap_canvas"><iframe width="100%" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=180%20Northfield%20Dr.%20W.%20ON%20N2L%200C7,%20Waterloo,%20ON%20Canada.&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0"
-                marginwidth="0"></iframe>
-            <style>
-                .mapouter {
-                    position: relative;
-                    text-align: right;
-                    height: 400px;
-                    width: 100%;
-                }
-            </style>
-            <style>
-                .gmap_canvas {
-                    overflow: hidden;
-                    background: none!important;
-                    height: 400px;
-                    width: 100%;
-                }
-            </style>
-        </div>
-    </div>
     <footer>
         <div class="footer-row d-flex">
             <div class="footer-col footer-about">

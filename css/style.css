@@ -1023,12 +1023,37 @@ section.blogs.single {
 */
 
 section.contact {
-    padding: 180px 120px;
+    padding: 0;
+    width: 100%;
+    height: 757px;
+}
+
+.contact-row {
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    padding: 140px 120px;
+    justify-content: center;
+}
+
+.contact-row #contact-form,
+.contact-row .contact-info {
+    width: 588px;
+    background: #FFF;
+    padding: 48px;
+}
+
+.contact-row #contact-form h2,
+.contact-row .contact-info h2 {
+    margin-bottom: 24px;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 120%;
 }
 
 .contact-row #contact-form {
     margin-right: 24px;
-    width: 588px;
 }
 
 #contact-form input,
@@ -1050,6 +1075,7 @@ section.contact {
 }
 
 #contact-form input[type="submit"] {
+    margin: 0;
     width: 158px;
     border: 1px solid #0A41DE;
     opacity: 1;
@@ -1062,7 +1088,6 @@ section.contact {
 
 .contact-info .contact-info-row {
     margin-bottom: 26px;
-    padding-left: 48px;
 }
 
 .contact-info .contact-info-row h4 {
@@ -1078,6 +1103,14 @@ section.contact {
     font-size: 14px;
     line-height: 140%;
     color: #808187;
+}
+
+.contact-info .btn {
+    padding: 12px 24px;
+    border: 1px solid #0A41DE;
+    font-size: 16px;
+    line-height: 150%;
+    color: #0A41DE;
 }
 
 
@@ -1408,13 +1441,22 @@ footer p.copy {
     * end blog inner page
     */
     /* 
- * terms page
-*/
+    * contact page
+    */
+    .contact-row {
+        padding: 70px 60px;
+    }
+    /* 
+    * contact page
+    */
+    /* 
+    * terms page
+    */
     section.legal {
         padding: 64px 162px 70px;
     }
     /* 
-     * end trms page
+     * end terms page
     */
     /*
      * footer
@@ -1983,15 +2025,21 @@ footer p.copy {
      * contact page
     */
     section.contact {
-        padding: 80px 24px;
+        width: 100%;
+        height: 1020px;
     }
     .contact .contact-row {
         flex-direction: column;
+        padding: 24px;
+    }
+    .contact-row #contact-form,
+    .contact-row .contact-info {
+        width: 100%;
+        padding: 40px 24px;
     }
     .contact-row #contact-form {
         margin-right: unset;
         margin-bottom: 48px;
-        width: 100%;
     }
     #contact-form input,
     #contact-form textarea {
@@ -2001,11 +2049,16 @@ footer p.copy {
     }
     #contact-form input[type="submit"] {
         width: 144px;
+        height: 48px;
+        padding: 12px 24px;
         font-size: 14px;
         line-height: 140%;
     }
     .contact-info .contact-info-row {
         padding-left: 0;
+    }
+    .contact-info .btn {
+        height: 48px;
     }
     /* 
      * end contact page
