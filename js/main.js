@@ -53,6 +53,21 @@ if ($('.hero-slide .slide-item')) {
 
 
 
+// business section slide transition
+if ($('.business-img .img')) {
+    setInterval(() => {
+        let curr = $('.business-img .img.active');
+        let next = curr.next('div');
+
+        next = next.length && next || $('.business-img .img')[0];
+
+        curr.toggleClass('active');
+        $(next).toggleClass('active');
+    }, 2000);
+}
+
+
+
 // article section mobile scroll
 if ($('.articles-indicators .indicator')) {
 

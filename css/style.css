@@ -448,7 +448,6 @@ section.technologies {
     justify-content: space-between;
     padding: 32px;
     width: 392px;
-    height: 416px;
     background: #FFF;
     border: 1px solid #DDDEDF;
 }
@@ -470,36 +469,6 @@ section.technologies {
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-}
-
-.services-card-item .learn-more {
-    padding: 10px 0;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 140%;
-}
-
-.services-card-item .learn-more svg {
-    margin-left: 8px;
-    width: 20px;
-    height: 20px;
-    stroke: #808187;
-}
-
-.services-card-item .learn-more,
-.services-card-item .learn-more svg {
-    transition: all 0.25s 0s cubic-bezier(0.33333, 0.66667, 0.66667, 1);
-}
-
-.services-card-item:hover .learn-more svg {
-    margin-left: 12px;
-}
-
-.services-card-item:hover .learn-more,
-.services-card-item:hover .learn-more svg {
-    color: #01040A;
-    stroke: #01040A;
-    transition: all 0.75s 0.125s cubic-bezier(0.33333, 0.66667, 0.66667, 1);
 }
 
 .business {
@@ -542,6 +511,14 @@ section.technologies {
 .business .business-img {
     width: 588px;
     height: 440px;
+}
+
+.business .business-img .img {
+    display: none;
+}
+
+.business .business-img .img.active {
+    display: block;
 }
 
 .technologies .technologies-row {
@@ -689,7 +666,7 @@ section.projects div.load-more-projects {
 
 .projects .project-row {
     padding: 60px;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -698,13 +675,13 @@ section.projects div.load-more-projects {
 }
 
 .project-row .project-image {
-    width: 720px;
+    width: 588px;
     max-width: 50%;
 }
 
 .project-row .project-text {
     margin-left: 24px;
-    width: 720px;
+    width: 588px;
     max-width: 50%;
     align-items: center;
 }
@@ -715,7 +692,7 @@ section.projects div.load-more-projects {
 }
 
 .project-text .project-text-container {
-    padding: 67px 48px;
+    padding: 33.5px 24px;
 }
 
 .project-row.left-text .project-text-container {
@@ -745,11 +722,11 @@ section.projects div.load-more-projects {
 }
 
 .projects .more-projects {
-    margin-top: 48px;
     justify-content: center;
 }
 
 .projects .more-projects .btn {
+    margin-top: 48px;
     border: 1px solid #0A41DE;
     padding: 12px 24px;
     font-size: 16px;
@@ -1724,31 +1701,6 @@ footer p.copy {
         max-width: 100%;
         height: auto;
     }
-    /* .services-card-item .learn-more {
-        padding: 10px 0;
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 140%;
-    }
-    .services-card-item .learn-more svg {
-        margin-left: 8px;
-        width: 20px;
-        height: 20px;
-        stroke: #808187;
-    }
-    .services-card-item .learn-more,
-    .services-card-item .learn-more svg {
-        transition: all 0.25s 0s cubic-bezier(0.33333, 0.66667, 0.66667, 1);
-    }
-    .services-card-item:hover .learn-more svg {
-        margin-left: 12px;
-    }
-    .services-card-item:hover .learn-more,
-    .services-card-item:hover .learn-more svg {
-        color: #01040A;
-        stroke: #01040A;
-        transition: all 0.75s 0.125s cubic-bezier(0.33333, 0.66667, 0.66667, 1);
-    } */
     .business .business-container {
         background: unset;
     }
