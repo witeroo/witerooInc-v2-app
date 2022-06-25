@@ -10,9 +10,14 @@ $hamburger.click(function(e) {
 
 
 // delayed smooth scroll on landing page
-$('.main-nav li a').click(function() {
+$('a').click(function() {
+    if ($("#navbar-nav").hasClass("open")) {
+        $(".hamburger").click();
+    }
+    // $('.navbar').hide();
+
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
-        location.hostname == this.hostname) {
+        location.hostname == this.hostname && $(this).attr('href') != '#') {
         let $target = $(this.hash);
         $target = $target.length && $target ||
             $('[name=' + this.hash.slice(1) + ']');
@@ -20,7 +25,7 @@ $('.main-nav li a').click(function() {
             let targetOffset = $target.offset().top;
             $('html')
                 .animate({
-                    scrollTop: targetOffset
+                    scrollTop: targetOffset - 89
                 }, 2000);
             return false;
         }

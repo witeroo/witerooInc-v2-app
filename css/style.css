@@ -222,6 +222,11 @@ body {
 */
 
 nav.main-nav {
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     padding: 24px 120px;
@@ -270,7 +275,8 @@ nav.main-nav .logo {
 */
 
 .hero {
-    padding: 101px;
+    margin-top: 89px;
+    padding: 50.5px;
     color: #FFF;
     background: url('../img/hero-bg.jpg');
 }
@@ -1016,9 +1022,9 @@ section.contact {
 
 .contact-row #contact-form,
 .contact-row .contact-info {
-    width: 588px;
+    width: 488px;
     background: #FFF;
-    padding: 48px;
+    padding: 36px;
 }
 
 .contact-row #contact-form h2,
@@ -1103,7 +1109,7 @@ section.contact {
 section.legal {
     margin: auto;
     max-width: 1440px;
-    padding: 64px 324px 140px;
+    padding: 89px 324px 140px;
 }
 
 section.legal h1 {
@@ -1599,8 +1605,7 @@ footer p.copy {
     * hero
     */
     .hero {
-        padding: 45.5px 67.5px;
-        /* background: url('../img/hero-bg.jpg'); */
+        padding: 22.75px 67.5px;
     }
     .hero h1 {
         font-weight: 900;
