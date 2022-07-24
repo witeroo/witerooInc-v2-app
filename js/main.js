@@ -158,7 +158,7 @@ if ($('#subscribe-btn')) {
             }
         }
     }
-    $('.subscription-body form input, .subscription-body form select').on('focus, click, change', validateSubscriptionFormInputFields);
+    $('.subscription-body form input, .subscription-body form select').on('focus click change keyup', validateSubscriptionFormInputFields);
 }
 
 
