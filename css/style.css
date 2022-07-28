@@ -973,7 +973,8 @@ footer p.copy {
 
 /* subscription popup */
 
-.subscription-form-container {
+.modal {
+    z-index: 99;
     display: none;
     position: fixed;
     width: 100%;
@@ -983,6 +984,60 @@ footer p.copy {
     top: 0px;
     background: rgba(2, 13, 44, 0.9);
     overflow: scroll;
+}
+
+.modal h1 {
+    font-style: normal;
+    font-weight: 1000;
+    font-size: 28px;
+    line-height: 120%;
+    text-align: center;
+    color: #FFF;
+}
+
+.modal .close-btn {
+    width: 40px;
+    height: 40px;
+    right: 16px;
+    top: 16px;
+    background: #FFF;
+    border-radius: 999px;
+    border: 0;
+    padding: 10px;
+}
+
+.subscription-popup-content {
+    margin: auto;
+}
+
+.subscription-popup-image,
+.subscription-popup-image img {
+    max-width: 282px;
+    max-height: 440px;
+}
+
+.subscription-popup-body {
+    padding: 104px 80px;
+    background: #FFF;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.subscription-popup-body h1 {
+    margin-bottom: 8px;
+    color: #01040A;
+    text-align: left;
+}
+
+.subscription-popup-body p {
+    margin-bottom: 16px;
+    max-width: 350px;
+}
+
+.subscription-popup-body .btn {
+    border: 1px solid #0A41DE;
+    padding: 12px 24px;
+    color: #0A41DE;
 }
 
 .subscription-form-content {
@@ -998,26 +1053,6 @@ footer p.copy {
     background-image: url('../img/subscription-header-bg.png');
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.subscription-form-content .subscription-header h1 {
-    font-style: normal;
-    font-weight: 1000;
-    font-size: 28px;
-    line-height: 120%;
-    text-align: center;
-    color: #FFF;
-}
-
-.subscription-header .close-btn {
-    width: 40px;
-    height: 40px;
-    right: 16px;
-    top: 16px;
-    background: #FFF;
-    border-radius: 999px;
-    border: 0;
-    padding: 10px;
 }
 
 .subscription-form-content .subscription-body {

@@ -111,9 +111,26 @@ if ($('.articles-indicators .indicator')) {
 
 
 // subscription form popup
+let subscriptionActionTaken = false;
+let subTriggerOffset = $('section.articles').offset() ? $('section.articles').offset().top : $('section.subscribe').offset().top - 700;
+$(document).scroll(function() {
+    if (!subscriptionActionTaken) {
+        if ($(window).scrollTop() >= subTriggerOffset) {
+            $('.modal.subscription-popup-container').attr('style', 'display:flex;');
+        }
+    }
+});
+
+$('.modal.subscription-popup-container .btn, .modal.subscription-popup-container .close-btn').click(() => {
+    subscriptionActionTaken = true;
+    $('.modal.subscription-popup-container').hide();
+})
+
+
+
 if ($('#subscribe-btn')) {
     // show subscription form container
-    $('#subscribe-btn').click(() => {
+    $('#subscribe-btn, #popup-subscribe-btn').click(() => {
         $('.subscription-form-container').show();
     });
 
@@ -128,9 +145,9 @@ if ($('#subscribe-btn')) {
         }
     });
 
-    // hide subscription form container
-    $('.subscription-form-container .close-btn').click(() => {
-        $('.subscription-form-container').hide();
+    // hide modal container
+    $('.modal .close-btn').click(() => {
+        $('.modal').hide();
     });
 
 
@@ -181,3 +198,53 @@ if ($('#more-projects')) {
         $(this).hide();
     })
 }
+
+
+// for (let index = 0; index < state.length; index++) {
+//     document.writeln("{\"name\":\"" + state[index].name + "\",");
+//     let cities = state[index].cities;
+//     document.writeln("\"cities\":[");
+//     for (let inde = 0; inde < cities.length; inde++) {
+//         document.writeln("\"" + cities[inde].name + "\",");
+//     }
+//     document.writeln("]");
+//     document.writeln("},")
+// }
+
+
+
+$('select[name="country"]').change(function() {
+    let countryCode = $(this).find(':selected').attr('data-value');
+    let stateOpts = $(this).parent().find('select[name="state"]');
+    $(stateOpts).empty();
+
+    if (countryCode) {
+        $.getJSON('states-cities/' + countryCode + '.json', (data) => {
+            let states = [];
+            $(data).each(function() {
+                states.push('<option>' + $(this)[0].name + '</option>')
+            })
+
+            $(stateOpts).append('<option value="">State</option>' + states)
+        })
+    }
+})
+
+$('select[name="state"]').change(function() {
+    let countryCode = $(this).parents('form').find('select[name="country"]').find(':selected').attr('data-value');
+    let state = $(this).val();
+    let cityOpts = $(this).parent().find('select[name="city"]');
+    $(cityOpts).empty();
+
+    if (state) {
+        $.getJSON('states-cities/' + countryCode + '.json', (data) => {
+            let jsonCities = data.find(jsonState => jsonState.name === state).cities;
+
+            let cities = jsonCities.map((city) => {
+                return '<option>' + city + '</option>';
+            });
+
+            $(cityOpts).append('<option value="">City</option>' + cities)
+        })
+    }
+})
