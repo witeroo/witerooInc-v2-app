@@ -1,0 +1,3 @@
+[
+    { "name": "Arecibo", "cities": ["Arecibo"] }, { "name": "Bayamon", "cities": ["Bayamon"] }, { "name": "Caguas", "cities": ["Caguas"] }, { "name": "Carolina", "cities": ["Carolina"] }, { "name": "Guaynabo", "cities": ["Guaynabo"] }, { "name": "Mayagüez", "cities": ["Mayagüez"] }, { "name": "Ponce", "cities": ["Ponce"] }, { "name": "San Juan", "cities": ["San Juan"] }, { "name": "Toa Baja", "cities": ["Toa Baja"] }, { "name": "Trujillo Alto", "cities": ["Trujillo Alto"] }
+]

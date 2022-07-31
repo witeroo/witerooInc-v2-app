@@ -1,0 +1,4 @@
+[{
+    "name": "Capital Governorate",
+    "cities": ["Jidd Ḩafş", "Manama", "Sitrah"]
+}, { "name": "Central Governorate", "cities": ["Madīnat Ḩamad"] }, { "name": "Muharraq Governorate", "cities": ["Al Ḩadd", "Al Muharraq"] }, { "name": "Northern Governorate", "cities": ["Northern Governorate"] }, { "name": "Southern Governorate", "cities": ["Ar Rifā‘", "Dār Kulayb", "Madīnat ‘Īsá"] }]

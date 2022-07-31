@@ -1,0 +1,3 @@
+[
+    { "name": "Akkar Governorate", "cities": ["Caza de Aakkar"] }, { "name": "Baalbek-Hermel Governorate", "cities": ["Baalbek", "Caza de Baalbek"] }, { "name": "Beirut Governorate", "cities": ["Beirut", "Ra’s Bayrūt"] }, { "name": "Beqaa Governorate", "cities": ["Aanjar", "Zahlé"] }, { "name": "Mount Lebanon Governorate", "cities": ["Baabda", "Bhamdoun", "Bhamdoûn el Mhatta", "Caza de Baabda", "Jbaïl", "Jounieh"] }, { "name": "Nabatieh Governorate", "cities": ["Ain Ebel", "Caza de Bent Jbaïl", "Caza de Nabatîyé", "Habboûch", "Marjayoûn", "Nabatîyé et Tahta"] }, { "name": "North Governorate", "cities": ["Batroûn", "Bcharré", "Tripoli"] }, { "name": "South Governorate", "cities": ["En Nâqoûra", "Ghazieh", "Sidon", "Tyre"] }
+]

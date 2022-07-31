@@ -204,8 +204,16 @@ if ($('#more-projects')) {
 //     document.writeln("{\"name\":\"" + state[index].name + "\",");
 //     let cities = state[index].cities;
 //     document.writeln("\"cities\":[");
-//     for (let inde = 0; inde < cities.length; inde++) {
-//         document.writeln("\"" + cities[inde].name + "\",");
+//     if (cities.length > 0) {
+//         for (let inde = 0; inde < cities.length; inde++) {
+//             if (inde != cities.length - 1) {
+//                 document.writeln("\"" + cities[inde].name + "\",");
+//             } else {
+//                 document.writeln("\"" + cities[inde].name + "\"");
+//             }
+//         }
+//     } else {
+//         document.writeln("\"" + state[index].name + "\"");
 //     }
 //     document.writeln("]");
 //     document.writeln("},")
