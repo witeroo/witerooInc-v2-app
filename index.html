@@ -975,13 +975,22 @@
         </div>
     </div>
     <div class="subscription-popup-container p-absolute modal">
-        <div class="subscription-popup-content d-flex">
-            <div class="subscription-popup-image">
+        <div class="subscription-popup-content d-flex p-relative">
+            <div class="subscription-popup-image d-sm-none">
                 <img src="img/subscription-popup.jpg" alt="">
             </div>
-            <div class="subscription-popup-body p-relative">
-                <button class="close-btn p-absolute"><img src="img/icons/x.svg" alt=""></button>
-                <h1>Join our<br>Newsletter</h1>
+            <div class="subscription-popup-image d-none d-sm-block">
+                <img src="img/subscription-popup-m.jpg" alt="">
+            </div>
+            <button class="close-btn p-absolute">
+                <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 5L5 15" stroke="#01040A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 5L15 15" stroke="#01040A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="subscription-popup-body">
+                <h1 class="d-sm-none">Join our<br>Newsletter</h1>
+                <h1 class="d-none d-sm-block">Join our Newsletter</h1>
                 <p>Sign-up today and get occasional email contents on technology. </p>
                 <div class="d-flex">
                     <a href="#" class="btn btn-secondary" id="popup-subscribe-btn">Subscribe to Newsletter</a>

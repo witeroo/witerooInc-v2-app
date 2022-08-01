@@ -738,19 +738,6 @@ section.projects div.load-more-projects {
     color: #808187;
 }
 
-.projects .more-projects {
-    justify-content: center;
-}
-
-.projects .more-projects .btn {
-    margin-top: 48px;
-    border: 1px solid #0A41DE;
-    padding: 12px 24px;
-    font-size: 16px;
-    line-height: 150%;
-    color: #0A41DE;
-}
-
 
 /* 
  * end projects page
@@ -1023,6 +1010,7 @@ footer p.copy {
     background: #FFF;
     font-weight: 400;
     font-size: 16px;
+    line-height: 150%;
 }
 
 .subscription-popup-body h1 {
@@ -1861,9 +1849,29 @@ footer p.copy {
     /*
      * subscription popup
      */
-    .subscription-form-container {
+    .modal {
         z-index: 99;
         padding: 0;
+    }
+    .modal.subscription-popup-container {
+        padding: 0 24px;
+    }
+    .subscription-popup-content {
+        flex-direction: column;
+    }
+    .subscription-popup-image,
+    .subscription-popup-image img {
+        max-width: 100%;
+        max-height: 366px;
+    }
+    .subscription-popup-body {
+        padding: 56px 40px;
+    }
+    .subscription-popup-body p {
+        max-width: 100%;
+    }
+    .subscription-popup-body .btn {
+        padding: 14px 24px;
     }
     .subscription-form-content {
         width: auto;
@@ -1872,7 +1880,7 @@ footer p.copy {
         padding: 48px;
         background-image: url('../img/subscription-header-bg-m.png');
     }
-    .subscription-form-content .subscription-header h1 {
+    .modal h1 {
         font-weight: 900;
         font-size: 24px;
     }
