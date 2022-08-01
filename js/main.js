@@ -200,27 +200,8 @@ if ($('#more-projects')) {
 }
 
 
-// for (let index = 0; index < state.length; index++) {
-//     document.writeln("{\"name\":\"" + state[index].name + "\",");
-//     let cities = state[index].cities;
-//     document.writeln("\"cities\":[");
-//     if (cities.length > 0) {
-//         for (let inde = 0; inde < cities.length; inde++) {
-//             if (inde != cities.length - 1) {
-//                 document.writeln("\"" + cities[inde].name + "\",");
-//             } else {
-//                 document.writeln("\"" + cities[inde].name + "\"");
-//             }
-//         }
-//     } else {
-//         document.writeln("\"" + state[index].name + "\"");
-//     }
-//     document.writeln("]");
-//     document.writeln("},")
-// }
 
-
-
+// state cities dropdown
 $('select[name="country"]').change(function() {
     let countryCode = $(this).find(':selected').attr('data-value');
     let stateOpts = $(this).parent().find('select[name="state"]');
