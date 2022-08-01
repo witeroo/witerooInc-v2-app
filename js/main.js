@@ -112,7 +112,12 @@ if ($('.articles-indicators .indicator')) {
 
 // subscription form popup
 let subscriptionActionTaken = false;
-let subTriggerOffset = $('section.articles').offset() ? $('section.articles').offset().top : $('section.subscribe').offset().top - 700;
+let subTriggerOffset = 0;
+if ($('section.articles').offset()) {
+    subTriggerOffset = $('section.articles').offset().top;
+} else if ($('section.subscribe').offset()) {
+    subTriggerOffset = $('section.subscribe').offset().top - 700;
+}
 $(document).scroll(function() {
     if (!subscriptionActionTaken) {
         if ($(window).scrollTop() >= subTriggerOffset) {
@@ -185,17 +190,6 @@ if ($('.navbar-drop-btn')) {
     $('.navbar-drop-btn').click(function(e) {
         e.preventDefault();
         $(this).next('.navbar').toggle();
-    })
-}
-
-
-
-// load more projects
-if ($('#more-projects')) {
-    $('#more-projects').click(function(e) {
-        e.preventDefault();
-        $('.load-more-projects').slideDown();
-        $(this).hide();
     })
 }
 
