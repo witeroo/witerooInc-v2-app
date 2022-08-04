@@ -781,7 +781,7 @@ section.contact {
 
 .contact-row #contact-form,
 .contact-row .contact-info {
-    width: 488px;
+    width: 540px;
     background: #FFF;
     padding: 36px;
 }
@@ -800,20 +800,20 @@ section.contact {
 
 #contact-form input,
 #contact-form textarea {
-    height: 56px;
-    padding: 16px 24px;
+    height: 40px;
+    padding: 8px 12px;
     font-weight: 600;
     font-size: 16px;
     line-height: 150%;
     color: #808187;
+    border-radius: 0;
 }
 
 #contact-form textarea {
     margin-bottom: 24px;
-    padding: 20px 10px 24px 24px;
+    padding: 20px 10px 24px 12px;
     height: 112px;
     border: 1px solid #DDDEDF;
-    border-radius: 24px;
 }
 
 #contact-form input[type="submit"] {
@@ -829,7 +829,7 @@ section.contact {
 }
 
 .contact-info .contact-info-row {
-    margin-bottom: 26px;
+    margin-bottom: 50px;
 }
 
 .contact-info .contact-info-row h4 {
@@ -850,6 +850,7 @@ section.contact {
 .contact-info .btn {
     padding: 12px 24px;
     border: 1px solid #0A41DE;
+    border-radius: 0;
     font-size: 16px;
     line-height: 150%;
     color: #0A41DE;
@@ -934,6 +935,7 @@ footer .footer-col li {
 footer .footer-about {
     width: 384px;
     padding: 0;
+    flex-direction: column;
 }
 
 footer .logo {
@@ -1813,6 +1815,7 @@ footer p.copy {
         line-height: 140%;
     }
     .contact-info .contact-info-row {
+        margin-bottom: 20px;
         padding-left: 0;
     }
     .contact-info .btn {
