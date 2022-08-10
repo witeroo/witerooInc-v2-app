@@ -296,41 +296,7 @@
             </p>
         </div>
         <div class="articles-container">
-            <div class="article-cards-row d-flex">
-                <div class="article-card-item">
-                    <div class="article-card-item-img">
-                        <img src="img/blog/blog-1.jpg" alt="">
-                    </div>
-                    <div class="article-card-item-text">
-                        <a href="#" class="article-tag">Cloud Solutions</a>
-                        <h4 class="article-title">Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet</h4>
-                        <span class="article-date">21 Jan. 2022</span>
-                        <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur integer laoreet nisl, pellentesque massa orci curabitur purus.</p>
-                    </div>
-                </div>
-                <div class="article-card-item">
-                    <div class="article-card-item-img">
-                        <img src="img/blog/blog-2.jpg" alt="">
-                    </div>
-                    <div class="article-card-item-text">
-                        <a href="#" class="article-tag">Cloud Solutions</a>
-                        <h4 class="article-title">Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet</h4>
-                        <span class="article-date">21 Jan. 2022</span>
-                        <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur integer laoreet nisl, pellentesque massa orci curabitur purus.</p>
-                    </div>
-                </div>
-                <div class="article-card-item">
-                    <div class="article-card-item-img">
-                        <img src="img/blog/blog-3.jpg" alt="">
-                    </div>
-                    <div class="article-card-item-text">
-                        <a href="#" class="article-tag">Cloud Solutions</a>
-                        <h4 class="article-title">Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet</h4>
-                        <span class="article-date">21 Jan. 2022</span>
-                        <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur integer laoreet nisl, pellentesque massa orci curabitur purus.</p>
-                    </div>
-                </div>
-            </div>
+            <div class="article-cards-row d-flex" id="recent-articles"></div>
         </div>
         <div class="articles-indicators d-flex">
             <div class="indicator"></div>
@@ -1032,6 +998,69 @@
     </div>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        function getexcerpt(content, limit) {
+            let filter = content.replace(/\s+/g, ' '); // You can add more filters here
+            let wordsarr = filter.split(' ');
+
+            if (wordsarr.length < limit) {
+                return content;
+            } else {
+                let excerpt = "";
+
+                for (let i = 0; i < limit; i++) {
+                    excerpt = excerpt + " " + wordsarr[i] + " ";
+                }
+
+                return excerpt + '...';
+            }
+        }
+
+        function formatDate(date) {
+            let articleDate = new Date(date);
+
+            let year = new Intl.DateTimeFormat('en', {
+                year: 'numeric'
+            }).format(articleDate);
+            let month = new Intl.DateTimeFormat('en', {
+                month: 'short'
+            }).format(articleDate);
+            let day = new Intl.DateTimeFormat('en', {
+                day: '2-digit'
+            }).format(articleDate);
+
+            return `${day} ${month}. ${year}`;
+        }
+
+        async function getFirstCategory(categoryId) {
+            let category;
+
+            await $.getJSON('http://44.202.5.11/wp-json/wp/v2/categories/' + categoryId, (data) => {
+                category = data.name;
+            });
+
+            return category;
+        }
+
+        $('document').ready(() => {
+            $.getJSON('https://blog.witeroo.com/wp-json/wp/v2/posts?per_page=3', (data) => {
+                data.forEach(element => {
+                    getFirstCategory(element.categories[0]).then((category) => {
+                        let articleCardItem = '<div class="article-card-item"><div class="article-card-item-img">';
+                        articleCardItem += `<img src="${element.jetpack_featured_media_url}" alt="">`;
+                        articleCardItem += '</div><div class="article-card-item-text">';
+                        articleCardItem += `<a href="#" class="article-tag">${category}</a>`;
+                        articleCardItem += `<a href="${element.link}"><h4 class="article-title">${getexcerpt(element.title.rendered, 12)}</h4></a>`;
+                        articleCardItem += `<span class="article-date">${formatDate(element.date)}</span>`;
+                        articleCardItem += `<p class="article-excerpt">${getexcerpt($(element.excerpt.rendered).text(), 17)}</p>`;
+                        articleCardItem += '</div></div>';
+
+                        $('#recent-articles').append(articleCardItem)
+                    });
+                });
+            })
+        });
+    </script>
 </body>
 
 </html>
