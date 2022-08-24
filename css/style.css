@@ -950,6 +950,7 @@ footer .footer-about p {
 }
 
 footer .socials .social-icon {
+    display: flex;
     margin-right: 16px;
     width: 40px;
     height: 40px;
@@ -958,7 +959,7 @@ footer .socials .social-icon {
     border-radius: 800px;
 }
 
-footer .social-icon img {
+footer .social-icon svg {
     width: 16px;
     height: 16px;
 }
