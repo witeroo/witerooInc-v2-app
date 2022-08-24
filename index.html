@@ -1051,10 +1051,10 @@
             return `${day} ${month}. ${year}`;
         }
 
-        async function getFirstCategory(categoryId) {
+        function getFirstCategory(categoryId) {
             let category;
 
-            await $.getJSON('https://blog.witeroo.com/wp-json/wp/v2/categories/' + categoryId, (data) => {
+            $.getJSON('https://blog.witeroo.com/wp-json/wp/v2/categories/' + categoryId, (data) => {
                 category = data.name;
             });
 
@@ -1064,18 +1064,19 @@
         $('document').ready(() => {
             $.getJSON('https://blog.witeroo.com/wp-json/wp/v2/posts?per_page=3', (data) => {
                 data.forEach(element => {
-                    getFirstCategory(element.categories[0]).then((category) => {
-                        let articleCardItem = '<div class="article-card-item"><div class="article-card-item-img">';
-                        articleCardItem += `<img src="${element.jetpack_featured_media_url}" alt="">`;
-                        articleCardItem += '</div><div class="article-card-item-text">';
-                        articleCardItem += `<a href="#" class="article-tag">${category}</a>`;
-                        articleCardItem += `<a href="${element.link}"><h4 class="article-title">${getexcerpt(element.title.rendered, 12)}</h4></a>`;
-                        articleCardItem += `<span class="article-date">${formatDate(element.date)}</span>`;
-                        articleCardItem += `<p class="article-excerpt">${getexcerpt($(element.excerpt.rendered).text(), 17)}</p>`;
-                        articleCardItem += '</div></div>';
+                    let category = getFirstCategory(element.categories[0]);
 
-                        $('#recent-articles').append(articleCardItem)
-                    });
+                    let articleCardItem = '<div class="article-card-item"><div class="article-card-item-img">';
+                    articleCardItem += `<img src="${element.jetpack_featured_media_url}" alt="">`;
+                    articleCardItem += '</div><div class="article-card-item-text">';
+                    articleCardItem += `<a href="#" class="article-tag">${category}</a>`;
+                    articleCardItem += `<a href="${element.link}"><h4 class="article-title">${getexcerpt(element.title.rendered, 12)}</h4></a>`;
+                    articleCardItem += `<span class="article-date">${formatDate(element.date)}</span>`;
+                    articleCardItem += `<p class="article-excerpt">${getexcerpt($(element.excerpt.rendered).text(), 17)}</p>`;
+                    articleCardItem += '</div></div>';
+
+                    $('#recent-articles').append(articleCardItem)
+
                 });
             })
         });
