@@ -1525,7 +1525,7 @@ footer p.copy {
         background: unset;
     }
     .business .business-container,
-    .our-work {
+    .our-work .our-work-container {
         padding: 60px 24px;
         flex-direction: column;
     }
@@ -1550,6 +1550,9 @@ footer p.copy {
         margin-bottom: 24px;
         width: 175px;
         height: auto;
+    }
+    section.our-work {
+        padding: 0;
     }
     .our-work .section-header {
         max-width: 100%;
@@ -1578,15 +1581,18 @@ footer p.copy {
     .articles .article-card-item:not(:last-child) {
         margin-right: unset;
     }
-    .articles .article-card-item .article-card-item-img,
+    .articles .article-card-item .article-card-item-img {
+        height: 216px;
+        overflow: hidden;
+    }
     .articles .article-card-item-img img {
-        width: 100%;
-        height: auto;
+        min-width: 100%;
+        min-height: 216px;
     }
     .articles .article-card-item .article-card-item-text {
         margin-bottom: unset;
         width: 100%;
-        height: auto;
+        height: 277px;
     }
     .articles .article-card-item-text h4.article-title {
         font-weight: 700;
