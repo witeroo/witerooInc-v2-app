@@ -761,6 +761,23 @@ section.projects div.load-more-projects {
  * contact page
 */
 
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb
+}
+
+.alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba
+}
+
+p.form-message {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
 section.contact {
     padding: 0;
     width: 100%;
@@ -793,6 +810,20 @@ section.contact {
 
 .contact-row #contact-form {
     margin-right: 24px;
+}
+
+.mapouter {
+    position: relative;
+    text-align: right;
+    height: 100%;
+    width: 100%;
+}
+
+#map {
+    overflow: hidden;
+    background: none!important;
+    height: 100%;
+    width: 100%;
 }
 
 #contact-form input,

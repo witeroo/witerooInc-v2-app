@@ -1,0 +1,171 @@
+<%- include('partials/header') %>
+    <div class="hero t-center">
+        <div class="hero-container">
+            <h1>Contact</h1>
+        </div>
+    </div>
+    <section class="contact p-relative">
+        <div class="mapouter">
+            <div id="map"></div>
+        </div>
+        <div class="contact-row d-flex p-absolute">
+            <form action="" id="contact-form">
+                <p class="form-message"></p>
+                <h2>Feedback Form</h2>
+                <p>Give us a feedback or reach out for more information.</p>
+                <input type="text" required name="name" placeholder="Your Name">
+                <input type="email" required name="email" placeholder="Enter your Email">
+                <input type="text" required name="subject" placeholder="Subject">
+                <textarea name="message" required placeholder="Enter Message"></textarea>
+                <input type="submit" value="Send Message" id="contact-form button">
+            </form>
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <div class="contact-info-row">
+                    <h4>Phone Number</h4>
+                    <a href="tel:+1(519)-991-1920" class="link">+1(519)-991-1920</a>
+                </div>
+                <div class="contact-info-row">
+                    <h4>Email</h4>
+                    <a href="mailto:info@witeroo.com" class="link">info@witeroo.com</a>
+                </div>
+                <div class="contact-info-row">
+                    <h4>Address</h4>
+                    <a href="" class="link">180 Northfield Dr. W. ON. Waterloo. N2L 0C7 Canada.</a>
+                </div>
+                <div class="d-flex">
+                    <a href="https://goo.gl/maps/i9KVS5GC1xzLbC5v9" target="_blank" class="btn btn-secondary">View address on Map</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('partials/footer') %>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQmWRysfXG-imYzrNhcxIY8CRTq8MsQQA"></script>
+
+        <script type="text/javascript">
+            // When the window has finished loading create our google map below
+            google.maps.event.addDomListener(window, 'load', init);
+
+            function init() {
+                // Basic options for a simple Google Map
+                // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+                var mapOptions = {
+                    // How zoomed in you want the map to start at (always required)
+                    zoom: 17,
+
+                    // The latitude and longitude to center the map (always required)
+                    center: new google.maps.LatLng(43.4974087, -80.5471963), // New York
+
+                    // How you would like to style the map. 
+                    // This is where you would paste any style found on Snazzy Maps.
+                    styles: [{
+                        "featureType": "all",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{
+                            "color": "#ffffff"
+                        }]
+                    }, {
+                        "featureType": "all",
+                        "elementType": "labels.text.stroke",
+                        "stylers": [{
+                            "color": "#000000"
+                        }, {
+                            "lightness": 13
+                        }]
+                    }, {
+                        "featureType": "administrative",
+                        "elementType": "geometry.fill",
+                        "stylers": [{
+                            "color": "#000000"
+                        }]
+                    }, {
+                        "featureType": "administrative",
+                        "elementType": "geometry.stroke",
+                        "stylers": [{
+                            "color": "#144b53"
+                        }, {
+                            "lightness": 14
+                        }, {
+                            "weight": 1.4
+                        }]
+                    }, {
+                        "featureType": "landscape",
+                        "elementType": "all",
+                        "stylers": [{
+                            "color": "#08304b"
+                        }]
+                    }, {
+                        "featureType": "poi",
+                        "elementType": "geometry",
+                        "stylers": [{
+                            "color": "#0c4152"
+                        }, {
+                            "lightness": 5
+                        }]
+                    }, {
+                        "featureType": "road.highway",
+                        "elementType": "geometry.fill",
+                        "stylers": [{
+                            "color": "#000000"
+                        }]
+                    }, {
+                        "featureType": "road.highway",
+                        "elementType": "geometry.stroke",
+                        "stylers": [{
+                            "color": "#0b434f"
+                        }, {
+                            "lightness": 25
+                        }]
+                    }, {
+                        "featureType": "road.arterial",
+                        "elementType": "geometry.fill",
+                        "stylers": [{
+                            "color": "#000000"
+                        }]
+                    }, {
+                        "featureType": "road.arterial",
+                        "elementType": "geometry.stroke",
+                        "stylers": [{
+                            "color": "#0b3d51"
+                        }, {
+                            "lightness": 16
+                        }]
+                    }, {
+                        "featureType": "road.local",
+                        "elementType": "geometry",
+                        "stylers": [{
+                            "color": "#000000"
+                        }]
+                    }, {
+                        "featureType": "transit",
+                        "elementType": "all",
+                        "stylers": [{
+                            "color": "#146474"
+                        }]
+                    }, {
+                        "featureType": "water",
+                        "elementType": "all",
+                        "stylers": [{
+                            "color": "#021019"
+                        }]
+                    }]
+                };
+
+                // Get the HTML DOM element that will contain your map 
+                // We are using a div with id="map" seen below in the <body>
+                var mapElement = document.getElementById('map');
+
+                // Create the Google Map using our element and options defined above
+                var map = new google.maps.Map(mapElement, mapOptions);
+
+                // Let's also add a marker while we're at it
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(43.4974087, -80.5471963),
+                    map: map,
+                    title: 'Witeroo Inc.'
+                });
+            }
+        </script>
+        </body>
+
+        </html>

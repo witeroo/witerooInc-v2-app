@@ -231,3 +231,24 @@ $('select[name="state"]').change(function() {
         })
     }
 })
+
+$("#contact-form").submit(function(e) {
+    e.preventDefault();
+
+    $($("#contact-form button")[0]).prop('disabled', true);
+
+    $.post('/contact', $('form#contact-form').serialize(), function(response) {
+            if (response.status) {
+                $('p.form-message').addClass('alert-success');
+            } else {
+                $('p.form-message').addClass('alert-warning');
+            }
+
+            $('p.form-message').show().text(response.message).delay(5000).fadeOut(3000);
+            $($("#contact-form button")[0]).prop('disabled', false);
+        },
+        'json'
+    );
+
+    $('p.form-message').removeClass('alert-success alert-warning');
+});
