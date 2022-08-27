@@ -461,7 +461,7 @@ section.technologies {
     flex-direction: column;
     justify-content: space-between;
     padding: 32px;
-    width: 392px;
+    width: calc((100% - 48px)/3);
     background: #FFF;
     border: 1px solid #DDDEDF;
 }
@@ -1549,7 +1549,7 @@ footer p.copy {
     .services .services-cards .services-card-item {
         margin-bottom: 24px;
         padding: 46px 32px;
-        max-width: 100%;
+        width: 100%;
         height: auto;
     }
     .business .business-container {
