@@ -1692,6 +1692,10 @@ footer p.copy {
     .project-row .project-image {
         max-width: 100%;
     }
+    .project-image img {
+        margin: auto;
+        width: 588px;
+    }
     .project-row .project-text,
     .project-row.left-text .project-text {
         order: 2;
