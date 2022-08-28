@@ -969,6 +969,7 @@
 
                 $.post('https://dashboard.witeroo.com/api/subscriptions', $(this).serialize(), (data) => {
                     if (data.success) {
+                        setSubscriptionActionCookie();
                         $('#subscription-alert').removeClass('alert-danger').addClass('alert-success').text(data.message).show();
                         $('.modal').delay(5000).hide(0);
                     } else {
