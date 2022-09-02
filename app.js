@@ -47,6 +47,10 @@ app.get('/privacy', (req, res) => {
     res.render('privacy', { pageTitle: 'Privacy' });
 });
 
+app.get('/cookies', (req, res) => {
+    res.render('cookies', { pageTitle: 'Cookies Policy' });
+});
+
 app.get('/terms', (req, res) => {
     res.render('terms', { pageTitle: 'Terms & Conditions' });
 });
