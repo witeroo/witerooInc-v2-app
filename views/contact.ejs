@@ -13,6 +13,8 @@
                 <p class="form-message"></p>
                 <h2>Feedback Form</h2>
                 <p>Give us a feedback or reach out for more information.</p>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <input type="text" name="sec" placeholder="Enter your" class="d-none">
                 <input type="text" required name="name" placeholder="Your Name">
                 <input type="email" required name="email" placeholder="Enter your Email">
                 <input type="text" required name="subject" placeholder="Subject">
