@@ -2,6 +2,7 @@
 
 require('dotenv').config();
 
+const axios = require('axios');
 const express = require('express');
 const app = express();
 const csrf = require('csurf')
@@ -34,13 +35,13 @@ app.get('/contact', csrfProtection, (req, res) => {
 app.post(
     '/contact',
     csrfProtection, [
-        body('sec').not().exists({ checkFalsy: true }),
+        body('g-recaptcha-response').exists({ checkFalsy: true }),
         body('name', 'Name is required').exists({ checkFalsy: true }),
         body('email', 'A valid email is required').isEmail(),
         body('subject', 'Subject is required').exists({ checkFalsy: true }),
         body('message', 'Message is required').exists({ checkFalsy: true })
     ],
-    (req, res) => {
+    async(req, res) => {
         const errors = validationResult(req);
 
         if (!errors.isEmpty()) {
@@ -52,21 +53,47 @@ app.post(
 
             res.json({ status: false, message: 'Invalid Form Fields!', errors: errorBag });
         } else {
-            let message = "<h4>A new Feedback Message</h4>";
-            message += `<p><b>Name: </b>${req.body.name}</p>`;
-            message += `<p><b>Email: </b>${req.body.email}</p>`;
-            message += `<p>${req.body.message}</p>`;
+            let isNotRobot = await verifyCaptcha(req.body['g-recaptcha-response']);
 
-            let subject = req.body.subject;
-
-            sendFeedBackMail(message, subject)
-                .then(() => res.json({ status: true, message: 'Your feedback was sent. Thank you!' }))
-                .catch((error) => {
-                    console.log(error);
-                    res.json({ status: false, message: 'Please try again. Thank you!' });
-                });
+            if (isNotRobot) {
+                sendContactFeedBack(req, res);
+            } else {
+                res.json({ status: false, message: 'Invalid Form Fields!' });
+            }
         }
     });
+
+async function verifyCaptcha(captcha) {
+
+    return axios.post(`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.CAPTCHA_SECRET}&response=${captcha}`)
+        .then(function(response) {
+            if (response.data.success) {
+                return true;
+            }
+            return false;
+        })
+        .catch(function(error) {
+            console.log(error);
+            return false;
+        });
+
+}
+
+async function sendContactFeedBack(req, res) {
+    let message = "<h4>A new Feedback Message</h4>";
+    message += `<p><b>Name: </b>${req.body.name}</p>`;
+    message += `<p><b>Email: </b>${req.body.email}</p>`;
+    message += `<p>${req.body.message}</p>`;
+
+    let subject = req.body.subject;
+
+    sendFeedBackMail(message, subject)
+        .then(() => res.json({ status: true, message: 'Your feedback was sent. Thank you!' }))
+        .catch((error) => {
+            console.log(error);
+            res.json({ status: false, message: 'Please try again. Thank you!' });
+        });
+}
 
 app.get('/privacy', (req, res) => {
     res.render('privacy', { pageTitle: 'Privacy' });

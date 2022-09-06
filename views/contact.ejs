@@ -14,11 +14,11 @@
                 <h2>Feedback Form</h2>
                 <p>Give us a feedback or reach out for more information.</p>
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                <input type="text" name="sec" placeholder="Enter your" class="d-none">
                 <input type="text" required name="name" placeholder="Your Name">
                 <input type="email" required name="email" placeholder="Enter your Email">
                 <input type="text" required name="subject" placeholder="Subject">
                 <textarea name="message" required placeholder="Enter Message"></textarea>
+                <div class="g-recaptcha brochure__form__captcha" data-sitekey="6Lex-9khAAAAAA1tVHPT2peP0ho6FdPsUAi-Y-kC"></div>
                 <input type="submit" value="Send Message" id="contact-form button">
             </form>
             <div class="contact-info">
@@ -42,6 +42,7 @@
         </div>
     </section>
     <%- include('partials/footer') %>
+        <script async src="https://www.google.com/recaptcha/api.js"></script>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQmWRysfXG-imYzrNhcxIY8CRTq8MsQQA"></script>
 
         <script type="text/javascript">
