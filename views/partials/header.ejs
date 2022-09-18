@@ -37,10 +37,12 @@
             </svg>
         </a>
         <ul class="navbar-nav d-flex" id="navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
+            <li class="<%= (pageTitle == 'Inspiring technology across connected industries') ? 'active' : '' %>">
+                <a href="/">Home</a>
+            </li>
             <li><a href="/#services">Services</a></li>
             <li><a href="/#business">Business</a></li>
-            <li><a href="/projects">Projects</a></li>
+            <li class="<%= (pageTitle == 'Projects & Capabilities') ? 'active' : '' %>"><a href="/projects">Projects</a></li>
             <li><a href="https://blog.witeroo.com">Blog</a></li>
             <li class="d-flex"><a href="/contact" class="btn btn-primary contact-btn">Contact Us</a></li>
         </ul>

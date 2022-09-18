@@ -11,7 +11,7 @@ const cookieParser = require('cookie-parser')
 const csrfProtection = csrf({ cookie: true });
 
 const sendFeedBackMail = require('./utils/send-feedback-mail');
-const { body, validationResult } = require('express-validator');
+const { body, query, validationResult } = require('express-validator');
 
 // middleware & static files
 app.use(express.static('public'));
@@ -106,6 +106,41 @@ app.get('/cookies', (req, res) => {
 app.get('/terms', (req, res) => {
     res.render('terms', { pageTitle: 'Terms & Conditions' });
 });
+
+app.get(
+    '/subscriptions/unsubscribe', [
+        query('type').isIn(['Business', 'Individual']),
+        query('mailId').isInt({ allow_leading_zeroes: false }),
+        query('email').isEmail(),
+        query('tId').isInt({ allow_leading_zeroes: false })
+    ],
+    (req, res, next) => {
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            res.redirect('/');
+        } else {
+            next();
+        }
+    }, (req, res) => {
+        axios.post('https://dashboard.witeroo.com/api/subscriptions/unsubscribe', {
+                type: req.query.type,
+                mailId: req.query.mailId,
+                email: req.query.email,
+                tId: req.query.tId
+            })
+            .then(function(response) {
+                if (response.data.success) {
+                    res.render('unsubscribed', { pageTitle: 'Unsubscribed' });
+                } else {
+                    res.redirect('/');
+                }
+            })
+            .catch(function(error) {
+                console.log(error);
+                res.redirect('/');
+            });
+    });
 
 app.listen(port, () => {
     console.log(`Witeroo app listening on port: ${port}`);
