@@ -2,6 +2,7 @@
 
 require('dotenv').config();
 
+const cors = require('cors');
 const axios = require('axios');
 const express = require('express');
 const app = express();
@@ -17,6 +18,12 @@ const { body, query, validationResult } = require('express-validator');
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser())
+
+app.use(cors({
+    "origin": [
+        "https://blog.witeroo.com"
+    ]
+}));
 
 app.set('view engine', 'ejs');
 
