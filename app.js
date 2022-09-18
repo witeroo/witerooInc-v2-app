@@ -107,6 +107,17 @@ app.get('/terms', (req, res) => {
     res.render('terms', { pageTitle: 'Terms & Conditions' });
 });
 
+app.post('/subscriptions', (req, res) => {
+    axios.post('https://dashboard.witeroo.com/api/subscriptions', req.body)
+        .then(function(response) {
+            res.json(response.data);
+        })
+        .catch(function(error) {
+            console.log(error);
+            res.json({ success: false, message: 'Please try again later' });
+        });
+});
+
 app.get(
     '/subscriptions/unsubscribe', [
         query('type').isIn(['Business', 'Individual']),
