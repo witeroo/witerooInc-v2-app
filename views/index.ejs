@@ -951,8 +951,8 @@
                     let recentArticles = data.map(async(blogPost) => {
                         let category = await getFirstCategory(blogPost.categories[0]);
 
-                        let articleCardItem = '<div class="article-card-item"><div class="article-card-item-img">';
-                        articleCardItem += `<img src="${blogPost.jetpack_featured_media_url}" alt="">`;
+                        let articleCardItem = `<div class="article-card-item"><div class="article-card-item-img" style="background-image: url(${blogPost.jetpack_featured_media_url})">`;
+                        // articleCardItem += `<img src="" alt="">`;
                         articleCardItem += '</div><div class="article-card-item-text">';
                         articleCardItem += `<a href="${category.link}" class="article-tag">${category.name}</a>`;
                         articleCardItem += `<a href="${blogPost.link}"><h4 class="article-title">${getexcerpt(blogPost.title.rendered, 12)}</h4></a>`;
