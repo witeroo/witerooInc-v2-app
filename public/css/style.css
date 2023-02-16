@@ -464,6 +464,17 @@ section.technologies {
     width: calc((100% - 48px)/3);
     background: #FFF;
     border: 1px solid #DDDEDF;
+    border-radius: 16px;
+    -webkit-transition: border-color 0.5s ease 0s;
+    -moz-transition: border-color 0.5s ease 0s;
+    transition: border-color 0.5s ease 0s;
+}
+
+.services .services-cards .services-card-item:hover {
+    border-color: #0A41DE;
+    -webkit-transition: border-color 1s ease 0s;
+    -moz-transition: border-color 1s ease 0s;
+    transition: border-color 1s ease 0s;
 }
 
 .services .service-card-item-content .service-icon {
