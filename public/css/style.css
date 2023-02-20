@@ -302,6 +302,13 @@ nav.main-nav .navbar-nav .logo a {
     background: url('../img/hero-bg.jpg');
 }
 
+.hero-slide {
+    background-color: #020D2C;
+    background-image: url('../img/hero-logo.svg');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 120px) 0px;
+}
+
 .hero h1 {
     font-weight: 1000;
     font-size: 32px;
@@ -323,13 +330,9 @@ nav.main-nav .navbar-nav .logo a {
     padding: 0;
     overflow: hidden;
     color: #FFF;
-    background-size: 200%;
-    background-position: center;
 }
 
 section.services,
-.business .business-container,
-.our-work .our-work-container,
 .articles .articles-container {
     max-width: 1680px;
     margin: auto;
@@ -338,8 +341,6 @@ section.services,
 .hero-slide .slide-item.active {
     height: auto;
     padding: 198.5px 120px;
-    background-size: 115%;
-    transition: background 1.25s 0s cubic-bezier(0.33333, 0.66667, 0.66667, 1);
 }
 
 .hero-slide .slide-text .header-text {
@@ -518,7 +519,8 @@ section.technologies {
     line-height: 150%;
 }
 
-.business {
+.business,
+.our-work {
     padding: 0;
 }
 
@@ -532,42 +534,47 @@ section.technologies {
     border-radius: 24px;
 }
 
-.business .business-container {
-    padding: 60px 120px;
-    background: linear-gradient(73.97deg, #0033EE 58.42%, rgba(0, 51, 238, 0) 75.27%);
+.business {
+    background-image: url('../img/business-bg.jpg');
+    background-position: center;
+    border-radius: 0;
 }
 
 .business .business-container,
-.our-work,
-.our-work-container {
-    justify-content: space-between;
+.our-work .our-work-container {
+    padding: 408px 120px 120px;
+    justify-content: center;
+    column-gap: 80px;
     align-items: center;
+    background: linear-gradient(360deg, rgba(2, 13, 44, 0.95) 30.15%, rgba(2, 13, 44, 0) 100%);
+    color: #FFF;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+}
+
+.business .business-container div,
+.our-work .our-work-container div {
+    max-width: 560px;
+}
+
+.business .business-container h3,
+.our-work .our-work-container h3 {
+    margin-bottom: 4px;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 120%;
 }
 
 .business .section-header,
 .our-work .section-header {
     margin: 0;
-    color: #FFF;
     text-align: left;
-    padding: 0 48px;
 }
 
 .business .section-header h2,
-.business .section-header p {
+.our-work .section-header h2 {
     color: #FFF;
-}
-
-.business .business-img {
-    width: 588px;
-    height: 440px;
-}
-
-.business .business-img .img {
-    display: none;
-}
-
-.business .business-img .img.active {
-    display: block;
 }
 
 .technologies .technologies-row {
@@ -582,21 +589,8 @@ section.technologies {
 }
 
 .our-work {
-    background: #03164A;
-}
-
-.our-work .section-header h2 {
-    text-align: left;
-    color: #FFF;
-}
-
-.our-work .section-header p {
-    margin-bottom: 16px;
-}
-
-.our-work .our-work-img img {
-    width: 588px;
-    height: 440px;
+    background-image: url('../img/our-work-bg.jpg');
+    background-position: center;
 }
 
 .articles .article-cards-row {
@@ -1214,12 +1208,8 @@ footer p.copy {
         height: auto;
     }
     .business .business-container,
-    .our-work {
+    .our-work .our-work-container {
         padding: 60px;
-    }
-    .business .business-img,
-    .our-work .our-work-img img {
-        height: auto;
     }
     .business .section-header,
     .our-work .section-header {
@@ -1607,10 +1597,6 @@ footer p.copy {
         padding: 60px 24px;
         flex-direction: column;
     }
-    .business .business-img {
-        width: 100%;
-        height: auto;
-    }
     .business .section-header {
         order: 2;
         max-width: 100%;
@@ -1638,10 +1624,6 @@ footer p.copy {
     }
     .our-work .section-header p {
         margin-bottom: 20px;
-    }
-    .our-work .our-work-img img {
-        width: 100%;
-        height: auto;
     }
     .articles .articles-container {
         width: 100%;
