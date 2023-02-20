@@ -111,7 +111,7 @@ textarea {
     height: 48px;
     padding: 14px 20px;
     border: 1px solid #DDDEDF;
-    border-radius: 999px;
+    border-radius: 16px;
     font-weight: 400;
     font-size: 14px;
     line-height: 140%;
@@ -188,6 +188,11 @@ input[type="submit"] {
     display: flex;
 }
 
+.d-flex-space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
 .d-inline-flex {
     display: inline-flex;
 }
@@ -230,20 +235,26 @@ nav.main-nav {
     justify-content: space-between;
     align-items: center;
     padding: 24px 120px;
-    background: #FFF;
-    border-bottom: 1px solid #DDDEDF;
+    background: #020D2C;
     font-weight: 600;
     font-size: 14px;
     line-height: 140%;
 }
 
-nav.main-nav .logo {
+nav.main-nav .logo,
+nav.main-nav .navbar-nav .logo a {
     width: 190.47px;
-    height: 26px;
+    height: 27px;
+    padding: 0;
 }
 
 .main-nav .navbar-nav {
     justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.main-nav .navbar-nav .left {
     align-items: center;
 }
 
@@ -252,12 +263,22 @@ nav.main-nav .logo {
     color: #01040A;
 }
 
-.main-nav .navbar-nav li:not(:last-child) {
+.main-nav .navbar-nav li {
     margin-right: 16px;
 }
 
-.main-nav .navbar-nav li:not(:last-child) a {
+.main-nav .navbar-nav .cta li {
+    margin-right: 0;
+}
+
+.main-nav .navbar-nav li a {
     padding: 10px 16px;
+    color: #EFF2FD;
+}
+
+.main-nav .navbar-nav .cta li a {
+    padding: 10px 24px;
+    color: #EFF2FD;
 }
 
 .navbar-nav .contact-btn {
@@ -461,20 +482,21 @@ section.technologies {
     flex-direction: column;
     justify-content: space-between;
     padding: 32px;
-    width: calc((100% - 48px)/3);
+    width: calc((100% - 48px)/4);
     background: #FFF;
     border: 1px solid #DDDEDF;
     border-radius: 16px;
-    -webkit-transition: border-color 0.5s ease 0s;
-    -moz-transition: border-color 0.5s ease 0s;
-    transition: border-color 0.5s ease 0s;
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+    -webkit-transition: all 400ms ease-out 0s;
+    -moz-transition: all 400ms ease-out 0s;
+    transition: all 400ms ease-out 0s;
 }
 
 .services .services-cards .services-card-item:hover {
     border-color: #0A41DE;
-    -webkit-transition: border-color 1s ease 0s;
-    -moz-transition: border-color 1s ease 0s;
-    transition: border-color 1s ease 0s;
+    transform: translate3d(0px, -9px, 0px) scale3d(1, 1, 1) rotateX(0deg)rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
 }
 
 .services .service-card-item-content .service-icon {
@@ -507,6 +529,7 @@ section.technologies {
     background-repeat: no-repeat;
     background-position: right;
     background-size: cover;
+    border-radius: 24px;
 }
 
 .business .business-container {
@@ -594,19 +617,19 @@ section.technologies {
     height: 216px;
     overflow: hidden;
     border-radius: 16px 16px 0 0;
+    border-width: 1px 1px 0px 1px;
+    border-style: solid;
+    border-color: #DDDEDF;
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
-    -webkit-transition: background-size 0.5s ease 0s;
-    -moz-transition: background-size 0.5s ease 0s;
-    transition: background-size 0.5s ease 0s;
+    -webkit-transition: background-size 2s ease 0s;
+    -moz-transition: background-size 2s ease 0s;
+    transition: background-size 2s ease 0s;
 }
 
 .articles .article-card-item:hover .article-card-item-img {
     background-size: 125% 125%;
-    -webkit-transition: background-size 1s ease 0s;
-    -moz-transition: background-size 1s ease 0s;
-    transition: background-size 1s ease 0s;
 }
 
 .articles .article-card-item .article-card-item-text {
@@ -675,7 +698,8 @@ section.technologies {
     width: 100%;
     max-width: unset;
     background: linear-gradient(73.97deg, #0033EE 58.42%, rgba(0, 51, 238, 0) 75.27%);
-    padding: 60px 120px;
+    padding: 80px;
+    border-radius: 24px;
     text-align: left;
 }
 
@@ -795,6 +819,7 @@ section.projects div.load-more-projects {
 }
 
 p.form-message {
+    display: none;
     padding: 10px;
     margin-bottom: 10px;
 }
@@ -802,7 +827,7 @@ p.form-message {
 section.contact {
     padding: 0;
     width: 100%;
-    height: 757px;
+    height: 874px;
 }
 
 .contact-row {
@@ -818,7 +843,8 @@ section.contact {
 .contact-row .contact-info {
     width: 540px;
     background: #FFF;
-    padding: 36px;
+    padding: 48px;
+    border-radius: 24px;
 }
 
 .contact-row #contact-form h2,
@@ -849,13 +875,12 @@ section.contact {
 
 #contact-form input,
 #contact-form textarea {
-    height: 40px;
-    padding: 8px 12px;
+    height: 56px;
+    padding: 16px 24px;
     font-weight: 600;
     font-size: 16px;
     line-height: 150%;
     color: #808187;
-    border-radius: 0;
 }
 
 #contact-form textarea {
@@ -868,7 +893,9 @@ section.contact {
 #contact-form input[type="submit"] {
     margin: 0;
     width: 158px;
+    padding: 12px 24px;
     border: 1px solid #0A41DE;
+    border-radius: 12px;
     opacity: 1;
     background: transparent;
     font-size: 16px;
@@ -899,7 +926,6 @@ section.contact {
 .contact-info .btn {
     padding: 12px 24px;
     border: 1px solid #0A41DE;
-    border-radius: 0;
     font-size: 16px;
     line-height: 150%;
     color: #0A41DE;
