@@ -111,7 +111,7 @@ textarea {
     height: 48px;
     padding: 14px 20px;
     border: 1px solid #DDDEDF;
-    border-radius: 16px;
+    border-radius: 12px;
     font-weight: 400;
     font-size: 14px;
     line-height: 140%;
@@ -475,15 +475,21 @@ section.technologies {
     padding: 80px 120px;
 }
 
+section.services .section-header {
+    max-width: unset;
+}
+
 .services .services-cards {
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .services .services-cards .services-card-item {
+    margin-bottom: 24px;
     flex-direction: column;
     justify-content: space-between;
-    padding: 32px;
-    width: calc((100% - 48px)/4);
+    padding: 40px;
+    width: calc((100% - 24px)/2);
     background: #FFF;
     border: 1px solid #DDDEDF;
     border-radius: 16px;
@@ -966,8 +972,16 @@ section.legal p {
 /* footer */
 
 footer {
+    background-color: #03164A;
+    background-image: url('../img/footer-bg.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+}
+
+footer .footer-container {
     padding: 70px 120px 80px;
-    background: #03164A;
+    background: linear-gradient(360deg, rgba(3, 22, 74, 0.2) 1.47%, #03164A 47.28%);
 }
 
 footer p,
@@ -1105,6 +1119,8 @@ footer p.copy {
 
 .subscription-popup-content {
     margin: auto;
+    border-radius: 24px;
+    overflow: hidden;
 }
 
 .subscription-popup-image,
@@ -1141,7 +1157,8 @@ footer p.copy {
 .subscription-form-content {
     margin: auto;
     width: 629px;
-    border-radius: 8px;
+    border-radius: 24px;
+    overflow: hidden;
     background: #FFF;
 }
 
@@ -1183,9 +1200,6 @@ footer p.copy {
     nav.main-nav {
         padding: 24px 60px;
     }
-    .main-nav .navbar-nav li:not(:last-child) a {
-        padding: 10px 8px;
-    }
     .navbar-nav .contact-btn {
         margin-left: 8px;
     }
@@ -1196,7 +1210,10 @@ footer p.copy {
     * hero
     */
     .hero-slide .slide-item.active {
-        padding: 99.25px 60px;
+        padding: 198.5px 60px;
+    }
+    .hero-slide .slide-indicator {
+        left: 60px;
     }
     section.articles,
     section.services,
@@ -1327,7 +1344,7 @@ footer p.copy {
     /*
      * footer
     */
-    footer {
+    footer.footer-container {
         padding: 70px 60px 80px;
     }
     footer .footer-col {
@@ -1351,14 +1368,12 @@ footer p.copy {
     /* header */
     nav.main-nav {
         justify-content: space-between;
-        padding: 24px;
+        padding: 32px 24px;
         font-size: 16px;
         line-height: 150%;
     }
     nav.main-nav .logo {
         width: 191.81px;
-        height: 40px;
-        padding: 8px;
     }
     .main-nav .navbar-nav {
         z-index: 9;
@@ -1370,7 +1385,6 @@ footer p.copy {
         width: 100%;
         border-bottom: 1px solid #DDDEDF;
         background: #FFF;
-        /* background: red; */
         padding: 48px 0;
         transition: all 0.55s 0.125s cubic-bezier(0.33333, 0.66667, 0.66667, 1);
     }
@@ -1378,14 +1392,25 @@ footer p.copy {
         top: calc(100% + 1px);
         transition: all 0.55s 0.125s cubic-bezier(0.33333, 0.66667, 0.66667, 1);
     }
-    .main-nav .navbar-nav li:not(:last-child) {
+    .main-nav .navbar-nav .left {
+        flex-direction: column;
+    }
+    .main-nav .navbar-nav li a {
+        padding: 10px 8px;
+        color: #808187;
+    }
+    .main-nav .navbar-nav li:not(:first-child) {
         margin: unset;
         display: flex;
+        width: 222px;
     }
-    .main-nav .navbar-nav li:not(:last-child) a {
+    .main-nav .navbar-nav li:not(:first-child) a {
         width: 100%;
         padding: 12px;
         text-align: center;
+    }
+    .main-nav .navbar-nav .cta {
+        justify-content: center;
     }
     .navbar-nav .contact-btn {
         margin: auto;
@@ -1399,10 +1424,8 @@ footer p.copy {
     * @link https://github.com/jonsuh/hamburgers
     */
     .hamburger {
-        padding: 14.17px 9.5px;
         display: inline-block;
         /* important */
-        height: 41.5px;
         font: inherit;
         color: inherit;
         background-color: transparent;
@@ -1413,7 +1436,8 @@ footer p.copy {
     .hamburger.is-active .hamburger-inner,
     .hamburger.is-active .hamburger-inner::before,
     .hamburger.is-active .hamburger-inner::after {
-        background-color: #01040A;
+        /* background-color: #01040A; */
+        background-color: #FFF;
     }
     .hamburger-box {
         width: 21px;
@@ -1431,7 +1455,7 @@ footer p.copy {
     .hamburger-inner::after {
         width: 21px;
         height: 1.5px;
-        background-color: #01040A;
+        background-color: #FFF;
         border-radius: 4px;
         position: absolute;
         transition-property: transform;
@@ -1490,6 +1514,9 @@ footer p.copy {
     .hero {
         padding: 22.75px 67.5px;
     }
+    .hero-slide {
+        background-image: unset;
+    }
     .hero h1 {
         font-weight: 900;
         font-size: 24px;
@@ -1497,12 +1524,8 @@ footer p.copy {
     /* 
     * landing page 
     */
-    .hero-slide .slide-item {
-        background-size: 650%;
-    }
     .hero-slide .slide-item.active {
-        padding: 140px 64px 140px 24px;
-        background-size: 450%;
+        padding: 106.5px 64px 173px 24px;
     }
     .hero-slide .slide-text .header-text {
         height: 115px;
@@ -1584,13 +1607,9 @@ footer p.copy {
         align-items: center;
     }
     .services .services-cards .services-card-item {
-        margin-bottom: 24px;
         padding: 46px 32px;
         width: 100%;
         height: auto;
-    }
-    .business .business-container {
-        background: unset;
     }
     .business .business-container,
     .our-work .our-work-container {
@@ -1598,7 +1617,6 @@ footer p.copy {
         flex-direction: column;
     }
     .business .section-header {
-        order: 2;
         max-width: 100%;
         padding: 24px 8px;
     }
@@ -1686,6 +1704,10 @@ footer p.copy {
     .subscribe .subscribe-container {
         background-image: url('../img/subscribe-bg-m.png');
         background-size: cover;
+        border-radius: 0;
+    }
+    .business {
+        background-image: url('../img/business-bg-m.jpg');
     }
     .subscribe .section-header {
         background: unset;
@@ -1746,135 +1768,11 @@ footer p.copy {
      * end projects page
     */
     /* 
-     * blogs page
-    */
-    nav.blog-nav .search-box input {
-        width: 175px;
-        padding: 10px 36px 10px 40px;
-    }
-    section.blogs {
-        padding: 80px 24px;
-    }
-    .blogs .blog-excerpt {
-        margin-bottom: 16px;
-    }
-    .featured-blog .read-more .btn {
-        margin-bottom: 24px;
-    }
-    .recent-blogs .recent-blogs-container {
-        flex-direction: column;
-    }
-    .blogs .article-card-item .article-card-item-img,
-    .blogs .article-card-item-img img {
-        width: 100%;
-        height: auto;
-    }
-    .blogs .article-card-item .article-card-item-text {
-        width: 100%;
-        height: auto;
-    }
-    .blogs .article-card-item-text h4.article-title {
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 150%;
-    }
-    .blogs a.btn.more-articles {
-        margin-top: -8px;
-        padding: 14px 24px;
-        font-size: 14px;
-        line-height: 140%;
-    }
-    /* 
-     * blogs page
-    */
-    /* 
-    * blog inner page
-    */
-    section.blogs.single {
-        padding: 0;
-    }
-    .blogs.single .single-blog {
-        margin: auto;
-        max-width: 100%;
-        padding: 0 0 80px;
-    }
-    .single-blog .featured-image {
-        margin-bottom: 24px;
-    }
-    .single-blog .blog-meta,
-    .single-blog .blog-content {
-        padding: 0 24px;
-    }
-    .single-blog .blog-meta a.blog-tag {
-        margin-bottom: 4px;
-        font-weight: 600;
-        font-size: 12px;
-        line-height: 130%;
-    }
-    .single-blog h1.single-title {
-        font-weight: 900;
-        font-size: 24px;
-    }
-    .single-blog .blog-meta span.article-date {
-        margin-bottom: 16px;
-    }
-    .single-blog .blog-meta .share-buttons {
-        padding: 16px 0;
-    }
-    .blog-meta .share-buttons span {
-        font-size: 14px;
-        line-height: 140%;
-    }
-    .single-blog .blog-content {
-        font-size: 16px;
-        line-height: 150%;
-    }
-    .single-blog .blog-content p {
-        margin-top: 16px;
-    }
-    .blogs.single .recent-blogs {
-        padding: 80px 24px;
-    }
-    .blogs.single .recent-blogs h3.continue {
-        margin-bottom: 24px;
-    }
-    .blogs.single .recent-blogs-container {
-        width: 100%;
-        overflow: scroll;
-        scroll-behavior: smooth;
-    }
-    .blogs.single .article-cards-row {
-        width: 300%;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-    }
-    .blogs.single .article-card-item .article-card-item-text {
-        margin-bottom: unset;
-    }
-    .articles-indicators {
-        padding: 24px;
-        justify-content: center;
-    }
-    .articles-indicators .indicator {
-        display: inline-block;
-        margin-right: 8px;
-        width: 56px;
-        height: 4px;
-        background: #DDDEDF;
-        border-radius: 999px;
-    }
-    .articles-indicators .indicator.active {
-        background: #0A41DE;
-    }
-    /* 
-    * end blog inner page
-    */
-    /* 
      * contact page
     */
     section.contact {
         width: 100%;
-        height: 1020px;
+        height: 1270px;
     }
     .contact .contact-row {
         flex-direction: column;
@@ -1930,7 +1828,7 @@ footer p.copy {
     /*
      * footer
     */
-    footer {
+    footer .footer-container {
         padding: 60px 24px 24px;
     }
     footer .footer-row {
