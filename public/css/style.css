@@ -391,6 +391,10 @@ section.services,
     line-height: 120%;
 }
 
+.hero-slide .slide-text h1 .highlight {
+    color: blue;
+}
+
 .hero-slide .slide-item.active .slide-text h1 {
     animation: headerTextSlideDown 1s ease 0s 1 normal forwards, headerTextSlideUp 0.5s ease 7.75s 1 normal forwards;
 }
@@ -1187,6 +1191,15 @@ footer p.copy {
     width: calc((100% - 16px)/2);
 }
 
+.loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #020D2C;
+    z-index: 999;
+    top: 0;
+}
+
 
 /*
  * responsive media queries
@@ -1525,6 +1538,7 @@ footer p.copy {
     * landing page 
     */
     .hero-slide .slide-item.active {
+        height: 566px;
         padding: 106.5px 64px 173px 24px;
     }
     .hero-slide .slide-text .header-text {
