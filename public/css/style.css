@@ -306,7 +306,7 @@ nav.main-nav .navbar-nav .logo a {
     background-color: #020D2C;
     background-image: url('../img/hero-logo.svg');
     background-repeat: no-repeat;
-    background-position: calc(100% - 120px) 0px;
+    background-position: calc(100% - 180px) 0px;
 }
 
 .hero h1 {
@@ -339,8 +339,8 @@ section.services,
 }
 
 .hero-slide .slide-item.active {
-    height: auto;
-    padding: 198.5px 120px;
+    height: 722px;
+    padding: 174.5px 120px 262.5px;
 }
 
 .hero-slide .slide-text .header-text {
@@ -472,7 +472,7 @@ section {
 section.articles,
 section.services,
 section.technologies {
-    padding: 80px 120px;
+    padding: 40px 120px;
 }
 
 section.services .section-header {
@@ -555,13 +555,13 @@ section.services .section-header {
     background: linear-gradient(360deg, rgba(2, 13, 44, 0.95) 30.15%, rgba(2, 13, 44, 0) 100%);
     color: #FFF;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 130%;
 }
 
 .business .business-container div,
 .our-work .our-work-container div {
-    max-width: 560px;
+    width: 560px;
 }
 
 .business .business-container h3,
@@ -1615,6 +1615,10 @@ footer p.copy {
     .our-work .our-work-container {
         padding: 60px 24px;
         flex-direction: column;
+    }
+    .business .business-container div,
+    .our-work .our-work-container div {
+        width: 100%;
     }
     .business .section-header {
         max-width: 100%;
