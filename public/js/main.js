@@ -44,7 +44,7 @@ if ($('.hero-slide .slide-item')) {
 
     setInterval(() => {
         currentPos++;
-        if (currentPos == 4) {
+        if (currentPos == 2) {
             currentPos = 0;
         }
 
