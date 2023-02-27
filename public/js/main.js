@@ -1,5 +1,9 @@
 "use strict";
-
+$(document).ready(function() {
+    setTimeout(function() {
+        $(".loader").hide();
+    }, 5000)
+});
 // mobile menu
 const $hamburger = $(".hamburger");
 $hamburger.click(function(e) {
@@ -53,7 +57,7 @@ if ($('.hero-slide .slide-item')) {
 
         $($('.hero-slide .slide-item')[currentPos]).addClass('active');
         $($('.hero-slide .indicator')[currentPos]).addClass('active');
-    }, 8250);
+    }, 10313);
 }
 
 

@@ -221,6 +221,22 @@ body {
     color: #808187;
 }
 
+.loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #020D2C;
+    z-index: 999;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader-bg-video {
+    width: 960px;
+    height: 540px;
+}
+
 
 /*
  * header
@@ -304,9 +320,15 @@ nav.main-nav .navbar-nav .logo a {
 
 .hero-slide {
     background-color: #020D2C;
-    background-image: url('../img/hero-logo.svg');
     background-repeat: no-repeat;
     background-position: calc(100% - 180px) 0px;
+}
+
+.hero-bg-video {
+    top: 0;
+    right: 180px;
+    width: 588px;
+    height: 610px;
 }
 
 .hero h1 {
@@ -348,7 +370,7 @@ section.services,
     overflow: hidden;
 }
 
-@keyframes headerTextSlideDown {
+@keyframes headerTextSlideUp {
     0% {
         margin-top: 35px;
     }
@@ -366,7 +388,7 @@ section.services,
     }
 }
 
-@keyframes headerTextSlideUp {
+@keyframes headerTextSlideDown {
     0% {
         margin-top: 0px;
     }
@@ -392,11 +414,12 @@ section.services,
 }
 
 .hero-slide .slide-text h1 .highlight {
-    color: blue;
+    color: #0A41DE;
 }
 
 .hero-slide .slide-item.active .slide-text h1 {
-    animation: headerTextSlideDown 1s ease 0s 1 normal forwards, headerTextSlideUp 0.5s ease 7.75s 1 normal forwards;
+    /* animation: headerTextSlideUp 1s ease 0s 1 normal forwards, headerTextSlideDown 0.5s ease 7.75s 1 normal forwards; */
+    animation: headerTextSlideUp 1.25s ease 0s 1 normal forwards, headerTextSlideDown 0.625s ease 9.6875s 1 normal forwards;
 }
 
 .hero-slide .slide-text p {
@@ -1191,15 +1214,6 @@ footer p.copy {
     width: calc((100% - 16px)/2);
 }
 
-.loader {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: #020D2C;
-    z-index: 999;
-    top: 0;
-}
-
 
 /*
  * responsive media queries
@@ -1542,9 +1556,9 @@ footer p.copy {
         padding: 106.5px 64px 173px 24px;
     }
     .hero-slide .slide-text .header-text {
-        height: 115px;
+        height: 200px;
     }
-    @keyframes headerTextSlideDown {
+    @keyframes headerTextSlideUp {
         0% {
             margin-top: 115px;
         }
@@ -1561,7 +1575,7 @@ footer p.copy {
             margin-top: 0px;
         }
     }
-    @keyframes headerTextSlideUp {
+    @keyframes headerTextSlideDown {
         0% {
             margin-top: 0px;
         }
