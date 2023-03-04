@@ -418,8 +418,7 @@ section.services,
 }
 
 .hero-slide .slide-item.active .slide-text h1 {
-    /* animation: headerTextSlideUp 1s ease 0s 1 normal forwards, headerTextSlideDown 0.5s ease 7.75s 1 normal forwards; */
-    animation: headerTextSlideUp 1.25s ease 0s 1 normal forwards, headerTextSlideDown 0.625s ease 9.6875s 1 normal forwards;
+    animation: headerTextSlideUp 1.25s ease 0s 1 normal forwards, headerTextSlideDown 0.625s ease 18.4765625s 1 normal forwards;
 }
 
 .hero-slide .slide-text p {
@@ -469,7 +468,7 @@ section.services,
 .hero-slide .indicator.active .indicator-inner {
     width: 100%;
     height: 100%;
-    transition: all 7s 1.25s cubic-bezier(0.33333, 0.66667, 0.66667, 1);
+    transition: all 19.1003125s 1.25s cubic-bezier(0.33333, 0.66667, 0.66667, 1);
 }
 
 section {

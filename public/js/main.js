@@ -1,9 +1,13 @@
 "use strict";
-$(document).ready(function() {
+$('.main-nav .logo').click(function(e) {
+    e.preventDefault();
+    $(".loader").css('display', 'flex');
     setTimeout(function() {
-        $(".loader").hide();
+        window.location = '/';
     }, 5000)
-});
+})
+
+
 // mobile menu
 const $hamburger = $(".hamburger");
 $hamburger.click(function(e) {
@@ -57,7 +61,7 @@ if ($('.hero-slide .slide-item')) {
 
         $($('.hero-slide .slide-item')[currentPos]).addClass('active');
         $($('.hero-slide .indicator')[currentPos]).addClass('active');
-    }, 10313);
+    }, 19101.5625);
 }
 
 
