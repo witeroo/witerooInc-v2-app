@@ -631,6 +631,7 @@ section.services .section-header {
 .our-work {
     background-image: url('../img/our-work-bg.jpg');
     background-position: center;
+    background-size: cover;
 }
 
 .articles .article-cards-row {
