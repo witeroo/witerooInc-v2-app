@@ -1,5 +1,4 @@
-
-<img src="https://i.imgur.com/PYnkReb.jpg" height="90"> 
+<img src="./public/img/logo - white.JPG" height="90"> 
 
 ## Witeroo Inc. frontend app
 
