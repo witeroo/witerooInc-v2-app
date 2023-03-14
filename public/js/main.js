@@ -1,4 +1,14 @@
 "use strict";
+$('.main-nav .logo').click(function(e) {
+    e.preventDefault();
+    $(".loader").css('display', 'flex');
+    $(".loader .loader-bg-video")[0].play();
+    setTimeout(function() {
+        $(".loader").css('display', 'none');
+        window.location = '/';
+    }, 5000)
+})
+
 
 // mobile menu
 const $hamburger = $(".hamburger");
@@ -44,7 +54,7 @@ if ($('.hero-slide .slide-item')) {
 
     setInterval(() => {
         currentPos++;
-        if (currentPos == 4) {
+        if (currentPos == 2) {
             currentPos = 0;
         }
 
@@ -53,7 +63,7 @@ if ($('.hero-slide .slide-item')) {
 
         $($('.hero-slide .slide-item')[currentPos]).addClass('active');
         $($('.hero-slide .indicator')[currentPos]).addClass('active');
-    }, 8250);
+    }, 19101.5625);
 }
 
 
