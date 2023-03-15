@@ -658,9 +658,9 @@ section.services .section-header {
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
-    -webkit-transition: background-size 2s ease 0s;
-    -moz-transition: background-size 2s ease 0s;
-    transition: background-size 2s ease 0s;
+    -webkit-transition: background-size 3s ease 0s;
+    -moz-transition: background-size 3s ease 0s;
+    transition: background-size 3s ease 0s;
 }
 
 .articles .article-card-item:hover .article-card-item-img {
