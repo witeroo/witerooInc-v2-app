@@ -1,1 +1,1 @@
-# Witeroo Inc. version 2 Frontend application
+# Witeroo Inc. version 2 application
